@@ -1,38 +1,53 @@
 HIGH LEVEL OVERVIEW :
                          
-                         USER
-                          │
-                          ▼
-                    ONE LOGIN
-                          │
-                          ▼
-                  GLOBAL USER ACCOUNT
-                          │
-              ┌───────────┴────────────┐
-              │                        │
-       CREATE ELECTION            JOIN ELECTION
-              │                        │
-              ▼                        ▼
-        ELECTION HEAD          INVITATION / VALIDATOR
-              │                        │
-              └────────────┬───────────┘
-                           ▼
-                    ELECTION MEMBERS
-                           │
-                    Role + Permissions
-                           │
-        ┌──────────┬───────┼───────┬──────────┐
-        ▼          ▼       ▼       ▼          ▼
-      HEAD      OFFICER  AUDITOR CANDIDATE   VOTER
-        │          │       │        │          │
-        └──────────┴───────┴────────┴──────────┘
-                           │
-                           ▼
-                  ELECTION SERVICES
-                           │
-             ┌─────────────┼─────────────┐
-             ▼             ▼             ▼
-         Candidates      Voting        Results
-                           │
-                           ▼
-                       Audit Log
+                    USER
+                      │
+                   LOGIN
+                      │
+                      ▼
+                DEFAULT VOTER
+                      │
+           ┌──────────┴──────────┐
+           │                     │
+     CREATE ELECTION         JOIN ELECTION
+           │                     │
+           ▼                     ▼
+     BECOMES OWNER          VALIDATION
+                                 │
+                       ┌─────────┴─────────┐
+                       │                   │
+                    VALID               INVALID
+                       │                   │
+                       ▼                   ▼
+                  JOIN AS VOTER         REJECT
+                       │
+                       ▼
+                OWNER MAY PROMOTE
+                       │
+          ┌────────────┼─────────────┐
+          ▼            ▼             ▼
+       OFFICER      AUDITOR       CANDIDATE
+          │
+          ▼
+      ELECTION
+          │
+     NOMINATION
+          │
+     CANDIDATE APPROVAL
+          │
+          ▼
+       VOTING
+          │
+   ONE-TIME CREDENTIAL
+          │
+          ▼
+      ANONYMOUS BALLOT
+          │
+          ▼
+       RECEIPT
+          │
+          ▼
+       RESULTS
+          │
+          ▼
+        AUDIT
