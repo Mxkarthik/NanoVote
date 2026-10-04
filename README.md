@@ -12,7 +12,7 @@ flowchart TD
     F --> G["Add Eligible Employee IDs"]
     G --> H["Publish Election"]
 
-    D --> I["Enter Employee ID + CFMS ID + FACE HAH"]
+    D --> I["Enter Employee ID + CFMS ID"]
     H --> I
 
     I --> J{"Employee Verified?"}
