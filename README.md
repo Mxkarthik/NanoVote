@@ -1,5 +1,6 @@
-High Level Architecture :   
-```
+## High Level Architecture
+
+```mermaid
 flowchart TD
     A["Start"] --> B["Select Portal"]
 
