@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const {getElections} = require("../controllers/electionController")
 
-router.get("/",(req,res) => {
-    res.send("Election routes are working")
-})
+router.get("/", getElections);
+
+
 
 module.exports = router;

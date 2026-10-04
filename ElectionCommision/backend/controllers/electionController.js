@@ -1,6 +1,5 @@
-const express = require("express");
-const router = express.Router();
+const getElections = (req, res) => {
+    res.send("Election routes are working");
+};
 
-
-
-module.exports = router;
+module.exports = { getElections };
